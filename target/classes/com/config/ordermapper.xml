@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.OrderMapper">
+ 
+	
+	<select id="selectString" parameterType="String" resultType="order">
+		SELECT * FROM TB_ORDER WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectInt" parameterType="Integer" resultType="order">
+		SELECT * FROM TB_ORDER WHERE OID = #{obj}
+	</select>
+	
+	<select id="selectDouble" parameterType="Double" resultType="order">
+		SELECT * FROM TB_ORDER WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectArString" parameterType="String" resultType="order">
+		SELECT * FROM TB_ORDER WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectArInt" parameterType="Integer" resultType="order">
+		SELECT * FROM TB_ORDER WHERE CID = #{obj}
+	</select>
+	
+	<select id="selectArDouble" parameterType="Double" resultType="order">
+		SELECT * FROM TB_ORDER WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectall" resultType="order">
+		SELECT * FROM TB_ORDER
+	</select>
+	
+	<insert parameterType="order" id="insert"> INSERT INTO TB_ORDER VALUES(order_seq.NEXTVAL,#{mtype},#{moption1},#{moption2},#{moption3},#{moption4},#{totalprice},SYSDATE,
+   #{slng},#{slag},#{elng},#{elag},#{stime},#{etime},#{ostatus},#{cid},#{cust_id},#{mid}) </insert>
+   
+   <update id="update" parameterType="order">
+      UPDATE TB_ORDER SET OID=#{oid},MTYPE=#{mtype},MOPTION1=#{moption1},MOPTION2=#{moption2},
+      MOPTION3=#{moption3},MOPTION4=#{moption4},TOTALPRICE=#{totalprice},ODATE=#{odate},slng=#{slng},slag=#{slag},elng=#{elng},elag=#{elag},
+      STIME=#{stime},ETIME=#{etime},OSTATUS=#{ostatus},CID=#{cid},MID=#{mid} WHERE CUST_ID=#{cust_id} and OSTATUS=#{insert}
+   </update>
+   
+   <update id="updateColumn" parameterType="updatevo">
+      UPDATE TB_ORDER SET #{column}=#{value} WHERE CUST_ID=#{cust_id} and OSTATUS='운행중'
+   </update>
+   
+   <delete id="deleteString" parameterType="String">
+      DELETE FROM TB_ORDER WHERE CUST_ID=#{obj} and OSTATUS= '예약완료'
+   </delete>
+   
+   <delete id="deleteInt" parameterType="Integer">
+      DELETE FROM TB_CUST WHERE ID=#{obj}
+   </delete>
+   
+   <delete id="deleteDouble" parameterType="Double">
+      DELETE FROM TB_CUST WHERE ID=#{obj}
+   </delete>
+	
+</mapper>

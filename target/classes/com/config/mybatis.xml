@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+PUBLIC "-//mybatis.org/DTD Config 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.vo.Cust" alias="cust" />
+		<typeAlias type="com.vo.Admin" alias="admin" />
+		<typeAlias type="com.vo.Car" alias="car"/>
+		<typeAlias type="com.vo.Order" alias="order" /> 
+		<typeAlias type="com.vo.Module" alias="module" /> 
+		<typeAlias type="com.vo.Updatevo" alias="updatevo" /> 
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="com/config/custmapper.xml" />
+		<mapper resource="com/config/adminmapper.xml" />
+		<mapper resource="com/config/carmapper.xml"/>
+		<mapper resource="com/config/ordermapper.xml" />
+		<mapper resource="com/config/modulemapper.xml" />
+	</mappers>
+</configuration>
+
+
+
+
+
+

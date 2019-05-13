@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.CustMapper">
+ 
+	
+	<select id="selectString" parameterType="String" resultType="cust">
+		SELECT * FROM TB_CUST WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectInt" parameterType="Integer" resultType="cust">
+		SELECT * FROM TB_CUST WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectDouble" parameterType="Double" resultType="cust">
+		SELECT * FROM TB_CUST WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectArString" parameterType="String" resultType="cust">
+		SELECT * FROM TB_CUST WHERE CUST_SEX = #{obj}
+	</select>
+	
+	<select id="selectArInt" parameterType="Integer" resultType="cust">
+		SELECT * FROM TB_CUST WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectArDouble" parameterType="Double" resultType="cust">
+		SELECT * FROM TB_CUST WHERE CUST_ID = #{obj}
+	</select>
+	
+	<select id="selectall" resultType="cust">
+		SELECT * FROM TB_CUST
+	</select>
+	
+	<insert id="insert" parameterType="cust">
+      INSERT INTO TB_CUST VALUES(#{cust_id},#{cust_pw},#{cust_name},#{cust_birthdate},#{cust_email},#{cust_phone},#{cust_address},#{cust_sex},SYSDATE,#{cust_fav1},#{cust_fav2},#{cust_fav3},#{cust_favcar},NULL,NULL,NULL,NULL)
+   </insert>
+   
+   <update id="update" parameterType="cust">
+      UPDATE TB_CUST SET CUST_PW=#{cust_pw},CUST_NAME=#{cust_name},CUST_BIRTHDATE=#{cust_birthdate},
+      CUST_EMAIL=#{cust_email},CUST_PHONE=#{cust_phone},CUST_ADDRESS=#{cust_address},
+      CUST_SEX=#{cust_sex},CUST_REGDATE=SYSDATE,CUST_FAV1=#{cust_fav1},CUST_FAV2=#{cust_fav2},CUST_FAV3=#{cust_fav3},CUST_FAVCAR=#{cust_favcar},
+      CTMLGT=#{ctmlgt},CTMTEP=#{ctmtep},CTMSEAT=#{ctmseat},CTMCAR=#{ctmcar} WHERE CUST_ID=#{cust_id}
+   </update>
+   
+   <update id="updateColumn" parameterType="cust">
+      UPDATE TB_CUST SET CTMLGT=#{ctmlgt},CTMTEP=#{ctmtep},CTMSEAT=#{ctmseat},CTMCAR=#{ctmcar} WHERE CUST_ID = #{cust_id}
+   </update>
+   
+   <delete id="deleteString" parameterType="String">
+      DELETE FROM TB_CUST WHERE CUST_ID=#{obj}
+   </delete>
+   
+   <delete id="deleteInt" parameterType="Integer">
+      DELETE FROM TB_CUST WHERE CUST_ID=#{obj}
+   </delete>
+   
+   <delete id="deleteDouble" parameterType="Double">
+      DELETE FROM TB_CUST WHERE CUST_ID=#{obj}
+   </delete>
+	
+</mapper>

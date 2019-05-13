@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.mapper.ModuleMapper">
+ 
+   <select id="selectString" parameterType="String" resultType="module">
+      SELECT * FROM TB_MODULE WHERE CUST_ID = #{obj}
+   </select>
+   
+   <select id="selectInt" parameterType="Integer" resultType="module">
+      SELECT * FROM TB_MODULE WHERE MID = #{obj}
+   </select>
+   
+   <select id="selectDouble" parameterType="Double" resultType="module">
+      SELECT * FROM TB_MODULE WHERE CUST_ID = #{obj}
+   </select>
+   
+   <select id="selectArString" parameterType="String" resultType="module">
+      SELECT * FROM TB_MODULE WHERE MSTATUS = #{obj}
+   </select>
+   
+   <select id="selectArInt" parameterType="Integer" resultType="module">
+      SELECT * FROM TB_MODULE WHERE CUST_ID = #{obj}
+   </select>
+   
+   <select id="selectArDouble" parameterType="Double" resultType="module">
+      SELECT * FROM TB_MODULE WHERE CUST_ID = #{obj}
+   </select>
+   
+   <select id="selectall" resultType="module">
+      SELECT * FROM TB_MODULE
+   </select>
+   
+   <insert id="insert" parameterType="module">
+      INSERT INTO TB_MODULE VALUES(#{cust_id},#{cust_pw},#{cust_name},#{cust_birthdate},#{cust_email},#{cust_phone},#{cust_address},#{cust_sex},SYSDATE)
+   </insert>
+   
+   <update id="update" parameterType="module">
+      UPDATE TB_MODULE SET MTYPE=#{mtype},MOPTION1=#{moption1},MOPTION2=#{moption2},MOPTION3=#{moption3},MOPTION4=#{moption4},MSTATUS=#{mstatus} WHERE MID=#{mid}
+   </update>
+   
+   <update id="updateColumn" parameterType="updatevo">
+      UPDATE TB_MODULE SET #{column}=#{value}
+   </update>
+   
+   <delete id="deleteString" parameterType="String">
+      DELETE FROM TB_MODULE WHERE ID=#{obj}
+   </delete>
+   
+   <delete id="deleteInt" parameterType="Integer">
+      DELETE FROM TB_MODULE WHERE ID=#{obj}
+   </delete>
+   
+   <delete id="deleteDouble" parameterType="Double">
+      DELETE FROM TB_MODULE WHERE ID=#{obj}
+   </delete>
+   
+</mapper>
