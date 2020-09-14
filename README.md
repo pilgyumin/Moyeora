@@ -5,7 +5,7 @@
 혁신성장 청년인재 프로젝트 (자율주행 카쉐어링 시스템) - Spring 서버
 
 ## 서비스 구조도
-![architecture](./image/architecture.jpg)
+![architecture](./architecture.jpg)
 
 ## 구현된 기능
 > - 사용자 요청을 수행하는 API
