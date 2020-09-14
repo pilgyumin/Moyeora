@@ -13,8 +13,10 @@
 
 ## 구현된 페이지 예시
 ![ManagementUi](./image/ManagementUi.jpg)
+자율주행 차량 위치 조회 페이지
 
 ![ManagementUi2](./image/ManagementUi2.jpg)
+고객 데이터 통계 페이지
 
 ## 역할 분담
 * 사용자 요청 수행 API 개발 : 민필규
